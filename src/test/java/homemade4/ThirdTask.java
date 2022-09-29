@@ -6,6 +6,7 @@ import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebElement;
 import utils.BaseTestWindow;
 
+import java.util.ArrayList;
 import java.util.Set;
 
 public class ThirdTask extends BaseTestWindow {
@@ -24,7 +25,7 @@ public class ThirdTask extends BaseTestWindow {
         password.clear();
         password.sendKeys("Lufthansa12");
         buttonLK.click();
-        Set<Cookie>cookies= driver.manage().getCookies();
+        Set<Cookie> cookies= driver.manage().getCookies();
         System.out.println(cookies);
     }
 

@@ -25,8 +25,9 @@ public class ThirdTask extends BaseTestWindow {
         password.clear();
         password.sendKeys("Lufthansa12");
         buttonLK.click();
-        Set<Cookie> cookies= driver.manage().getCookies();
-        System.out.println(cookies);
+        System.out.println(driver.manage().getCookies());
+
+
     }
 
 

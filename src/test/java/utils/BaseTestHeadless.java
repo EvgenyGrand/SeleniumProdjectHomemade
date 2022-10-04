@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.concurrent.TimeUnit;
 
-public class BaseTest {
+public class BaseTestHeadless {
 
     protected final String ConfigDriver = null;
     protected WebDriver driver;
@@ -30,11 +30,11 @@ public class BaseTest {
 
     }
 
-    @AfterEach
-    protected void End() {
-        if (driver != null)
-            driver.quit();
-    }
+//    @AfterEach
+//    protected void End() {
+//        if (driver != null)
+//            driver.quit();
+//    }
 }
 
 

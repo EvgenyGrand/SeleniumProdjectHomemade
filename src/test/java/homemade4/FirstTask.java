@@ -4,9 +4,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import utils.BaseTest;
+import utils.BaseTestHeadless;
+import utils.BaseTestWindow;
 
-public class FirstTask extends BaseTest {
+import java.util.Collections;
+import java.util.List;
+
+public class FirstTask extends BaseTestHeadless {
 
     @Test
     public void searchOtus(){
@@ -16,8 +20,9 @@ public class FirstTask extends BaseTest {
 
         inputwindow.sendKeys("ОТУС");
         searchbutton.click();
-        WebElement searchresult = driver.findElement(By.linkText("Онлайн‑курсы для профессионалов, дистанционное обучение современным ..."));
-        Assertions.assertEquals("Онлайн‑курсы для профессионалов, дистанционное обучение современным ...",searchresult.getText());
+        List<WebElement> searchResult= Collections.singletonList(driver.findElement(By.xpath("//*[@class='EKtkFWMYpwzMKOYr0GYm LQVY1Jpkk8nyJ6HBWKAk']")));
+        Assertions.assertEquals("Онлайн‑курсы для профессионалов, дистанционное обучение современным ...",searchResult.get(0).getText());
+
 
     }
 }

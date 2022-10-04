@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class BaseTestWindow extends BaseTest{
+public class BaseTestWindow extends BaseTestHeadless {
 
     @BeforeEach
     public void setUpChrome(){

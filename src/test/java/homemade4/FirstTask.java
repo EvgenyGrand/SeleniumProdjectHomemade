@@ -22,7 +22,7 @@ public class FirstTask extends BaseTestHeadless {
         searchbutton.click();
         List<WebElement> searchResult= Collections.singletonList(driver.findElement(By.xpath("//*[@class='EKtkFWMYpwzMKOYr0GYm LQVY1Jpkk8nyJ6HBWKAk']")));
         Assertions.assertEquals("Онлайн‑курсы для профессионалов, дистанционное обучение современным ...",searchResult.get(0).getText());
-
+        logger.info("Тест завершен");
 
     }
 }

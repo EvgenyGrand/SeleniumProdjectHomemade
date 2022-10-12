@@ -13,7 +13,7 @@ import java.util.List;
 public class FirstTask extends BaseTestHeadless {
 
     @Test
-    public void searchOtus(){
+    public void searchOtus() throws InterruptedException{
         driver.get("https://duckduckgo.com/");
         WebElement inputwindow = driver.findElement(By.id("search_form_input_homepage"));
         WebElement searchbutton = driver.findElement(By.id("search_button_homepage"));

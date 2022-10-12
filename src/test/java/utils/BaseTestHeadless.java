@@ -30,11 +30,11 @@ public class BaseTestHeadless {
 
     }
 
-    @AfterEach
-    protected void End() {
-        if (driver != null)
-            driver.quit();
-    }
+//    @AfterEach
+//    protected void End() {
+//        if (driver != null)
+//            driver.quit();
+//    }
 }
 
 

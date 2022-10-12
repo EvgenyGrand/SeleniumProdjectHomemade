@@ -15,7 +15,7 @@ import java.time.Duration;
 public class SecondTask extends BaseTestWindow {
     @Test
     public void checkPicture() throws InterruptedException {
-        driver.manage().window().fullscreen();
+        driver.manage().window().maximize();
         driver.get("https://demo.w3layouts.com/demos_new/template_demo/03-10-2020/photoflash-liberty-demo_Free/685659620/web/index.html?_ga=2.181802926.889871791.1632394818-2083132868.1632394818");
         WebElement scroll  = driver.findElement(By.cssSelector("input[type='search'][placeholder='Search here...']"));
         WebElement picture = driver.findElement(By.cssSelector("a[href=\"assets/images/p4.jpg\"] > div[class='content-overlay']"));

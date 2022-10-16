@@ -132,17 +132,14 @@ public class CheckAccountOtus extends BaseTestWindow {
         admin.get("https://otus.ru");
         Thread.sleep(2000);
 
-
-            //Выполнение входа в личный кабинет (в page object вынести в отдельный метод)
-            WebElement registrationButtonAdmin = admin.findElement(By.cssSelector("body > div.body-wrapper > div > header.header2.header2_non-auth > div > div.header2__right > div > div.header2__auth-container > button"));
-            registrationButtonAdmin.click();
-            Thread.sleep(2000);
-        WebElement loginAdmin = driver.findElement(By.cssSelector("input[type='text'][placeholder='Электронная почта']"));
-        WebElement passwordAdmin = driver.findElement(By.cssSelector("input[type='password']"));
-        WebElement buttonLKAdmin = driver.findElement(By.cssSelector("button[class='new-button new-button_full new-button_blue new-button_md']"));
+        WebElement registrationButtonAdmin = admin.findElement(By.xpath("//*[@class = 'header2__auth js-open-modal']"));
+        registrationButtonAdmin.click();
+        WebElement loginAdmin = admin.findElement(By.cssSelector("input[type='text'][placeholder='Электронная почта']"));
+        WebElement passwordAdmin = admin.findElement(By.cssSelector("input[type='password']"));
+        WebElement buttonLKAdmin = admin.findElement(By.cssSelector("button[class='new-button new-button_full new-button_blue new-button_md']"));
         Thread.sleep(2000);
         loginAdmin.clear();
-        loginAdmin.sendKeys("Evgeny.Granf@mail.ru");
+        loginAdmin.sendKeys(LOGIN);
         passwordAdmin.clear();
         passwordAdmin.sendKeys(PASSWORD);
         buttonLKAdmin.click();
@@ -150,18 +147,14 @@ public class CheckAccountOtus extends BaseTestWindow {
         Thread.sleep(2000);
 
         //Переход в Раздел ЛК "О себе"
-        Actions actionAdmin = new Actions(driver);
-        WebElement dropdownlistAdmin = driver.findElement(By.cssSelector("div[class = 'header2-menu__item-wrapper header2-menu__item-wrapper__username']"));
-        WebElement myAccountAdmin = driver.findElement(By.cssSelector("b[class='header2-menu__dropdown-text_name']"));
-        actionAdmin.moveToElement(dropdownlistAdmin).moveToElement(myAccountAdmin).click().build().perform();
+        Actions clearBrowser = new Actions(admin);
+        WebElement dropdownlistAdmin = admin.findElement(By.cssSelector("div[class = 'header2-menu__item-wrapper header2-menu__item-wrapper__username']"));
+        WebElement myAccountAdmin = admin.findElement(By.cssSelector("b[class='header2-menu__dropdown-text_name']"));
+        action.moveToElement(dropdownlistAdmin).moveToElement(myAccountAdmin).click().build().perform();
         logger.info("Переход в раздел 'О себе' выполнен");
 
 
 
-
-            //Проверки
-
-
-        }
     }
+}
 

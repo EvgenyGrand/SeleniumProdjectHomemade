@@ -25,7 +25,7 @@ public class SecondTask extends BaseTestWindow {
         picture.click();
         logger.info("Появилось модальное окно");
        WebElement modalPicture= driver.findElement(By.cssSelector("div[class=\"pp_pic_holder light_rounded\"]"));
-       Assertions.assertEquals(true,modalPicture.isDisplayed());
+       Assertions.assertTrue(modalPicture.isDisplayed());
 
 
 

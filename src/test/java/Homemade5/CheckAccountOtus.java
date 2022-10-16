@@ -123,7 +123,6 @@ public class CheckAccountOtus extends BaseTestWindow {
         driver.quit();
 
         //Запуск чистого браузера
-        WebDriverManager.chromedriver().setup();
         WebDriver admin = new ChromeDriver();
         admin.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         logger.info("Драйвер поднят");

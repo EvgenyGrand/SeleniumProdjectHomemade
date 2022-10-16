@@ -150,8 +150,34 @@ public class CheckAccountOtus extends BaseTestWindow {
         Actions clearBrowser = new Actions(admin);
         WebElement dropdownlistAdmin = admin.findElement(By.cssSelector("div[class = 'header2-menu__item-wrapper header2-menu__item-wrapper__username']"));
         WebElement myAccountAdmin = admin.findElement(By.cssSelector("b[class='header2-menu__dropdown-text_name']"));
-        action.moveToElement(dropdownlistAdmin).moveToElement(myAccountAdmin).click().build().perform();
+        clearBrowser.moveToElement(dropdownlistAdmin).moveToElement(myAccountAdmin).click().build().perform();
         logger.info("Переход в раздел 'О себе' выполнен");
+
+        //Поиск элементов для проверок
+        WebElement fnameAdmin = admin.findElement(By.id("id_fname"));
+        WebElement lnameAdmin = admin.findElement(By.id("id_lname"));
+        WebElement nameLatinAdmin = admin.findElement(By.id("id_lname_latin"));
+        WebElement lNAmeLatinAdmin = admin.findElement(By.id("id_lname_latin"));
+        WebElement id_blog_nameAdmin = admin.findElement(By.id("id_blog_name"));
+        WebElement countryAdmin = admin.findElement(By.cssSelector("body > div.body-wrapper > div > div.js-lk-cv > div.container.container-padding-bottom > div.container__row > div.container__col.container__col_9.container__col_md-8.container__col_sm-12.container__col_border-left.lk-rightbar.print-block.print-wide > div > form > div:nth-child(2) > div.container__col.container__col_12 > div:nth-child(1) > div > div.container__col.container__col_9.container__col_ssm-12 > div:nth-child(1) > div.container__col.container__col_9.container__col_md-8.container__col_middle > div > label > div"));
+        WebElement cityAdmin = admin.findElement(By.xpath("/html/body/div[1]/div/div[4]/div[3]/div[2]/div[2]/div/form/div[1]/div[3]/div[1]/div/div[1]/div[2]/div[2]/div/label/div"));
+        WebElement changeLevelAdmin = admin.findElement(By.cssSelector("button[title='Ниже среднего (Pre-Intermediate)']"));
+        WebElement inputcontactAdmin = admin.findElement(By.cssSelector("input[name='contact-1-value']"));
+
+        //Проверки
+        Assertions.assertEquals("Евгений", fnameAdmin.getText());
+        Assertions.assertEquals("Чистяков",lnameAdmin.getText());
+        Assertions.assertEquals("Evgenii",nameLatinAdmin.getText());
+        Assertions.assertEquals("Chistyakov",lNAmeLatinAdmin.getText());
+        Assertions.assertEquals("Evgenii",id_blog_nameAdmin.getText());
+        Assertions.assertEquals("Россия", countryAdmin.getText());
+        Assertions.assertEquals("Санкт-Петербург",cityAdmin.getText());
+        Assertions.assertEquals("Ниже среднего",changeLevelAdmin.getText());
+        Assertions.assertEquals("+79218466331",inputcontactAdmin.getText());
+
+
+
+
 
 
 
